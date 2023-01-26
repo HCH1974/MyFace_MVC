@@ -3,6 +3,25 @@
 <%- include('_header') -%>
 <body>
 <h1>Create Post</h1>
+<form method="post" action="/posts/create">
+    <label>
+        Blog Title:
+        <input type="text" required name="message"/>
+    </label>
+    <label> 
+        Blog image URL:
+        <input type="text" required name="imageUrl">    
+    </label>
+    <button type="submit">Submit</button>
 </body>
 <%- include('_footer') -%>
 </html>
+
+<!--
+      id: number;
+  message: string; i.e. a title
+  imageUrl: string; an image
+  createdAt: Date;  don't need to collect
+  postedBy: PostUserModel; don't need to collect 
+  likedBy: PostUserModel[];
+  dislikedBy: PostUserModel[]; -->
