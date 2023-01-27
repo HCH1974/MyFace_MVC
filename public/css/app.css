@@ -1,1 +1,48 @@
 /* Add your styles here. */
+
+body {
+    font-size: 1.2rem;
+}
+
+.header-buttons {
+
+margin: 10px;    
+display: flex;
+font-family: Arial;
+font-size: 2rem;
+
+}
+
+.single-button {
+
+    flex: 1
+    
+    }
+
+.page-title {
+
+color: blueviolet;
+text-align: center; 
+
+}
+
+.list-of-posts {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.single-post {
+    flex: 1; 
+
+}
+
+
+/* things to change: 
+Text is hidden at the bottom of the image
+Images are not organised in any wa: not aligned, stacked on top of each other
+Buttons should be fancy 
+Text should be underneath the image
+Text should be larger 
+Tidy people who have liked/disliked columns 
+*/

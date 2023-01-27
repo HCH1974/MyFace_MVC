@@ -3,24 +3,24 @@
     <%- include('_header') -%>
 
         <body>
-            <h1>Posts</h1>
-            <ol>
+            <h1 class="page-title">Posts</h1>
+            <ol class="list-of-posts">
                 <% postList.results.forEach(function(post) {%>
-                    <li>
+                    <li class="single-post">
+                        <img class="post-image" src=<%=post.imageUrl %>/><br>
                         <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
                                 <%= post.id %>
-                                    <img src=<%=post.imageUrl %> />
-                                    <%= post.postedBy %>
-                                        <% post.likedBy.forEach(function(userModel) {%>
+                                    <%= post.postedBy.name %>
+                                        <!--  <% post.likedBy.forEach(function(userModel) {%>
                                             <%= userModel.name %>
                                                 <% }) %>
                                                     <% post.dislikedBy.forEach(function(userModel) {%>
                                                         <%= userModel.name %>
                                                             <% }) %>
-
-                                                                <form method="post" action="/posts/<%=post.id %>/like">
-                                                                    <button type="submit">Like Post</button>
-                                                                </form>
+                                                    -->
+                                        <form method="post" action="/posts/<%=post.id %>/like">
+                                            <button type="submit">Like Post</button>
+                                        </form>
 
                     </li>
 
