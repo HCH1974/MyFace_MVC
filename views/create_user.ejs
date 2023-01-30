@@ -3,30 +3,36 @@
     <%- include('_header') -%>
 
         <body>
-            <h1>Create User</h1>
-            <form method="post" action="/users/create">
+            <h1>Create a new user:</h1>
+                  
+            <form method="post" action="/users/create" class="create-user-form">
                 <label>
                     Name:
-                    <input type="text" required name="name" />
                 </label>
+                <input type="text" required name="name" class="create-user-input"/>
                 <label>
                     Username:
-                    <input type="text" required name="username" />
+              
                 </label>
+                <input type="text" required name="username" class="create-user-input" />
                 <label>
                     Email:
-                    <input type="email" required name="email" />
                 </label>
+                <input type="email" required name="email" class="create-user-input" />
                 <label>
                     ProfileImageUrl:
-                    <input type="text" required name="profileImageUrl" />
+
                 </label>
+                <input type="text" required name="profileImageUrl" class="create-user-input" />
+
                 <label>
                     CoverImageUrl:
-                    <input type="text" required name="coverImageUrl" />
+
                 </label>
-                <button type="submit">Submit</button>
+                <input type="text" required name="coverImageUrl" class="create-user-input" />
+                <button type="submit" class="create-user-submit">Submit</button>
             </form>
+            
         </body>
         <%- include('_footer') -%>
 
