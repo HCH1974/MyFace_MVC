@@ -104,13 +104,29 @@ img {
 
 }
 
-.list-of-posts, .list-of-users {
+.list-of-posts {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     list-style: none;
     padding: 0;
     justify-content: space-evenly;
+}
+
+.list-of-users {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    width: 35%;
+}
+
+.individual-user {
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.user-button {
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .single-post {
