@@ -5,6 +5,8 @@ then media queries alphabetically by the outermost container */
 :root {
 
     --default-background: #252A38;
+    --transparent-overlay: #252A38;
+    /* add opacity: 56% when using */
     --darker-background: #151820;
     --default-foreground: #DCDCDC;
     --primary: #2985FF;
@@ -40,7 +42,26 @@ label {
 img {
     max-height: 100%;
     max-width: 100%;
-    border: 2px solid var(--darker-background);
+    border: 0;
+}
+
+.brand-block {
+    height: 15%;
+    border: 2px solid var(--primary);
+    background-color: white;
+
+
+}
+
+#button-box {
+    margin: 5px;
+    background-color: var(--primary);
+    padding: 2px;
+    border-radius: 1%;
+    width: 10%;
+    min-width: 100px;
+    height: 7%;
+
 }
 
 .create-user-form {
@@ -49,8 +70,7 @@ img {
     grid-template-rows: 50px 50px;
     row-gap: 10px;
     width: 35%;
-    min-width: 250px;
-
+    min-width: 290px;
 }
 
 .create-user-input {
@@ -77,31 +97,75 @@ img {
 
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: left;
     font-size: 2rem;
     background-color: var(--darker-background);
 
+}
+
+
+
+.header-container {
+    display: none;
 
 }
 
 
-.single-button {
+#header-displayed {
     display: flex;
-    flex: 1;
-    margin: 5px;
-    justify-content: center;
-    background-color: var(--primary);
-    padding: 2px;
-    text-align: center;
-    border-radius: 1%;
+    position: fixed;
+    top: 6%;
+    right: 2%;
 
 }
 
-.page-title {
+#header-inactive {
+    display: none;
+}
 
-    color: var(--primary);
-    text-align: center;
-    font-size: 3rem;
+.header-menu-lines {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    height: 6%;
+    width: 70%; 
+}
 
+#header-open-button {
+    position: fixed;
+    right: 1%;
+    top: 1.5%;
+    width: 5.5%;
+    height: 4%;
+    min-width: 30px;
+    max-width: 40px;
+    background-color: var(--primary);
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+
+@media (max-width: 321px) {
+    #header-open-button {
+        right: 3.25%;
+        top: 1.25%;
+        width: 4%;
+        height: 3.5%;
+        border-radius: 3%;
+
+    }
+
+}
+
+.individual-user {
+    grid-column-start: 1;
+    grid-column-end: 1;
 }
 
 .list-of-posts {
@@ -117,23 +181,92 @@ img {
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     width: 35%;
+    min-width: 250px;
 }
 
-.individual-user {
-    grid-column-start: 1;
-    grid-column-end: 1;
+.page-title {
+
+    color: var(--primary);
+    text-align: center;
+    font-size: 3rem;
+
 }
 
-.user-button {
-    grid-column-start: 2;
-    grid-column-end: 3;
+.random-color {
+    background-color: red;
+}
+
+
+.single-button {
+    display: flex;
+    flex: 1;
+    margin: 5px;
+    justify-content: center;
+    background-color: var(--primary);
+    padding: 2px;
+    text-align: center;
+    border-radius: 1%;
+
 }
 
 .single-post {
     width: 35%;
     margin-top: 5px;
+}
 
+.user-button {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: var(--primary);
+    border-radius: 1%;
 
+}
+
+.user-detail-cover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-height: 350px;
+    max-width: 100%;
+}
+
+.user-cover-image {
+    width: 100%;
+    position: absolute;
+}
+
+.user-cover-transparency {
+    position: absolute;
+    height: 20%;
+    min-height: 20%;
+    width: 100%;
+    background-color: var(--transparent-overlay);
+    opacity: .56;
+    bottom: 0%;
+}
+
+.user-name-title {
+    position: absolute;
+    bottom: 1%;
+    left: 15%;
+    background-color: transparent;
+    margin: 0;
+
+}
+
+.user-profile-image {
+    position: absolute;
+    bottom: 0%;
+    left: 2%;
+    margin: 0;
+    border-radius: 50%;
+    max-height: 35%;
+    border: 2px solid white;
+}
+
+.user-single-post {
+    width: 25%;
+    margin: 15px;
 }
 
 .post-text-box,

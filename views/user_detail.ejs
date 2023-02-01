@@ -1,8 +1,38 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-<h1><%= name %></h1>
-</body>
-<%- include('_footer') -%>
+    <%- include('_header') -%>
+
+        <body>
+            <div class="user-detail-cover">
+                <img class="user-cover-image" src=<%=coverImageUrl %>/>
+                <div class="user-cover-transparency"></div>
+                <img class="user-profile-image" src=<%=profileImageUrl %> />
+
+                <h1 class="user-name-title">
+                    <%= name %>
+                </h1>
+            </div>
+
+            <!--  <div><%= posts[0].imageUrl %></div> -->
+
+            <ul class="list-of-posts">
+                <% posts.forEach(function(post) {%>
+                    <li class="user-single-post">
+                        <img class="user-post-image" src=<%=post.imageUrl %> />
+                        <div class="post-text-box">
+                            <strong><%= username %></strong>
+                            <br>
+                            <small><%= post.createdAt  %></small>
+                                <br>
+                                    <%= post.message %>
+                                    <br>
+                        </div>
+                    </li> <br>
+                    <% }); %>
+            </ul>
+
+
+
+        </body>
+        <%- include('_footer') -%>
 </html>

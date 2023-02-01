@@ -4,11 +4,12 @@
 
         <body>
             <h1 class="page-title">Posts</h1>
+            <button id="button-box" onclick="setRandomColor()">Click me for a random colour</button>
             <ul class="list-of-posts">
                 <% postList.results.forEach(function(post) {%>
                     <li class="single-post">
                         <img class="post-image" src=<%=post.imageUrl %>/><br>
-                        <div class="post-text-box">
+                        <div class="post-text-box" id="random-cols">
                             <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
                                     <%= post.id %>
                                         <%= post.postedBy.name %>

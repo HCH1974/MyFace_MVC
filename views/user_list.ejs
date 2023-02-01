@@ -1,8 +1,8 @@
 <html lang="en-gb"> <%- include('_head') -%> <%- include('_header') -%>
 
         <body>
-            <h1>Users</h1>
-            <ol>
+            <h1 class="page-title">Users</h1>
+            <ul>
                 <% results.forEach(function(user) {%>
                     <li class="list-of-users">
                         <div class="individual-user">
@@ -10,11 +10,10 @@
                         </div> <a class="user-button" href="/users/<%= user.id %>">Details</a>
                     </li> <br>
                     <% }); %>
-            </ol>
+            </ul>
             <%if (next) { %> <a href="<%= next %>">Next</a>
                 <% } %>
                     <%if (previous) { %> <a href="<%= previous %>">Previous</a>
                         <% } %>
         </body> <%- include('_footer') -%>
-
-</html>
+=</html>
